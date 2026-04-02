@@ -1,0 +1,147 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+
+  --color-violet-50: #f4f0ff;
+  --color-violet-100: #e8ddff;
+  --color-violet-200: #d2c0ff;
+  --color-violet-300: #b497ff;
+  --color-violet-400: #9164ff;
+  --color-violet-500: #7a43ff;
+  --color-violet-600: #662eea;
+  --color-violet-700: #5324bf;
+  --color-violet-800: #441f98;
+  --color-violet-900: #3a1f77;
+  --color-violet-950: #220f4f;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, rgb(122 67 255 / 0.18), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgb(72 187 255 / 0.12), transparent 30%),
+    linear-gradient(180deg, #fcfbff 0%, #f8f6ff 100%);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 12% 0%, rgb(122 67 255 / 0.28), transparent 35%),
+    radial-gradient(circle at 85% 10%, rgb(56 189 248 / 0.18), transparent 30%),
+    linear-gradient(180deg, #07070d 0%, #0d0b18 100%);
+  color: #ece9ff;
+}
+
+.sai-grid {
+  background-image:
+    linear-gradient(to right, rgb(120 120 160 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(120 120 160 / 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.dark .sai-grid {
+  background-image:
+    linear-gradient(to right, rgb(140 125 200 / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(140 125 200 / 0.12) 1px, transparent 1px);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.sai-panel {
+  border: 1px solid rgb(148 163 184 / 0.35);
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.dark .sai-panel {
+  border-color: rgb(139 92 246 / 0.35);
+  background: rgb(20 16 35 / 0.72);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.orb-a {
+  width: 18rem;
+  height: 18rem;
+  right: -2rem;
+  top: -4rem;
+  background: rgb(122 67 255 / 0.3);
+}
+
+.orb-b {
+  width: 14rem;
+  height: 14rem;
+  right: 6rem;
+  bottom: -7rem;
+  background: rgb(72 187 255 / 0.2);
+}
+
+.dark .orb-a {
+  background: rgb(122 67 255 / 0.36);
+}
+
+.dark .orb-b {
+  background: rgb(72 187 255 / 0.24);
+}
+
+.skills-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.skills-marquee-track {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  animation: skills-marquee 28s linear infinite;
+}
+
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+.skills-chip {
+  border: 1px solid rgb(148 163 184 / 0.45);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgb(255 255 255 / 0.6);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dark .skills-chip {
+  border-color: rgb(139 92 246 / 0.4);
+  background: rgb(20 16 35 / 0.68);
+}
+
+@keyframes skills-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 0.375rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee {
+    overflow-x: auto;
+    mask-image: none;
+  }
+
+  .skills-marquee-track {
+    animation: none;
+  }
+}
