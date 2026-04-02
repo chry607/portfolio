@@ -229,6 +229,18 @@ export const certifications: Certification[] = [
     links: [
       { label: 'Certificate', url: 'https://verified.sertifier.com/en/verify/11904129918788/' }
     ]
+  },
+  {
+    title: 'Time Series | Intro to Deep Learning | Intro and Intermediate Machine Learning',
+    issuer: 'Kaggle',
+    date: '2025',
+    description: 'Completed the Time Series, Intro to Deep Learning, and Intro and Intermediate Machine Learning courses on Kaggle.',
+    links: [
+      { label: 'Time Series', url: 'https://www.kaggle.com/learn/certification/reuterjancamacho/time-series' },
+      { label: 'Intro to Deep Learning', url: 'https://www.kaggle.com/learn/certification/reuterjancamacho/intro-to-deep-learning' },
+      { label: 'Intermediate Machine Learning', url: 'https://www.kaggle.com/learn/certification/reuterjancamacho/intermediate-machine-learning' },
+      { label: 'Intro to Machine Learning', url: 'https://www.kaggle.com/learn/certification/reuterjancamacho/intro-to-machine-learning' }
+    ]
   }
 ]
 
@@ -276,6 +288,6 @@ export const activities: Activity[] = [
     title: 'Automation Competition – Participant',
     organization: 'Old St. Labs',
     period: '2025',
-    description: 'Designed and implemented an automation solution, applying concepts in prompt engineering to solve business inefficiencies in their standard operating procedure',
+    description: 'Designed and implemented an automation solution, applying concepts in prompt engineering to solve business inefficiencies in their standard operating procedure'
   }
 ]
