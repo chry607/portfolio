@@ -241,6 +241,23 @@ export const projects: Project[] = [
       'Developed dynamic frontend with vanilla JavaScript.',
       'Deployed using Firebase and Google Cloud Platform.'
     ]
+  },
+  {
+    slug: 'portfolio-website',
+    title: 'Personal Portfolio Website',
+    subtitle: 'High-performance developer portfolio',
+    description: 'Designed and developed a modern, responsive portfolio to showcase projects, technical skills, and achievements with a focus on performance and clean UI/UX.',
+    impact: 'Central hub for projects and recruiter visibility',
+    category: 'swe',
+    stack: ['Nuxt.js', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/chry607/portfolio',
+    liveUrl: 'https://portfolio-by5o80v3n-reuters-projects.vercel.app/',
+    highlights: [
+      'Built with Nuxt.js for optimized performance and SEO.',
+      'Designed responsive UI using Tailwind CSS with clean component structure.',
+      'Structured project data dynamically for easy extensibility.',
+      'Focused on accessibility, fast load times, and smooth user experience.'
+    ]
   }
 ]
 
