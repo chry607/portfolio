@@ -11,6 +11,11 @@ export type Project = {
   liveUrl?: string
 }
 
+export type Link = {
+  label: string
+  url: string
+}
+
 export type ProjectCategory = {
   id: string
   label: string
@@ -19,16 +24,46 @@ export type ProjectCategory = {
 export type Talk = {
   title: string
   event: string
-  year: string
+  date: string
   description: string
-  links?: { label: string, url: string }[]
+  highlights?: string[]
+  links?: Link[]
 }
 
 export type Activity = {
   title: string
   organization: string
+  period?: string
   description: string
-  links?: { label: string, url: string }[]
+  highlights?: string[]
+  links?: Link[]
+}
+
+export type Experience = {
+  role: string
+  organization: string
+  period: string
+  location?: string
+  description: string[]
+  highlights?: string[]
+  tech?: string[]
+  links?: Link[]
+}
+
+export type Certification = {
+  title: string
+  issuer: string
+  date: string
+  credentialId?: string
+  description?: string
+  skills?: string[]
+  links?: Link[]
+}
+
+export type FocusArea = {
+  title: string
+  subtitle?: string
+  items: string[]
 }
 
 export const profile = {
@@ -38,6 +73,32 @@ export const profile = {
   resumeSwe: '/resume/swe-resume.pdf',
   resumeDataAi: '/resume/data-ai-resume.pdf'
 }
+
+export const focusAreas: FocusArea[] = [
+  {
+    title: 'Software Engineering',
+    subtitle: 'Systems, architecture, product',
+    items: [
+      'Scalable APIs and backend architecture',
+      'Frontend UX for data-heavy products',
+      'Testing, observability, and performance'
+    ]
+  },
+  {
+    title: 'AI / ML',
+    subtitle: 'From experiments to production',
+    items: [
+      'Training + evaluation workflows',
+      'Model deployment and monitoring',
+      'Data pipelines and feature work'
+    ]
+  },
+  {
+    title: 'Computational Science',
+    subtitle: 'Beyond Computer Science',
+    items: ['Quantum Computing', 'Bioinformatics', 'Quantitative Finance']
+  }
+]
 
 export const stack = [
   'Python',
@@ -122,25 +183,81 @@ export const projects: Project[] = [
   }
 ]
 
-export const talks: Talk[] = [
+export const experiences: Experience[] = [
   {
-    title: 'Shipping ML Projects Beyond Jupyter',
-    event: 'Campus AI Builders Seminar',
-    year: '2025',
-    description: 'Shared practical lessons on model reproducibility, deployment constraints, and experiment tracking.'
+    role: 'Finance Head',
+    organization: 'Association for Computing Machinery - UP Diliman Student Chapter',
+    period: 'Present',
+    location: 'Philippines',
+    description: [
+      'Standardized financial workflows improving reporting accuracy and transparency',
+      'Managed budgeting and allocation across multiple projects',
+      'Built a financial analytics platform centralizing multi-project budget tracking',
+      'Developed SQL pipelines for historical vs. real-time data analysis',
+      'Created visualization tools for structured budget insights'
+    ]
   },
   {
-    title: 'Fast Problem Solving for ICPC-Style Contests',
-    event: 'University Coding Bootcamp',
-    year: '2024',
-    description: 'Walked through graph and DP tactics used in competitive programming rounds.'
+    role: 'President',
+    organization: 'Ateneo Senior High School Programming Varsity',
+    period: 'August 2023 - May 2024',
+    location: 'Philippines',
+    description: [
+      'Led the varsity programming team, setting training schedules, organizing events, and mentoring members.',
+      'Served as team captain for competitive programming contests, coaching members in advanced algorithms and problem-solving strategies.',
+      'Developed and taught advanced programming techniques, boosting team performance in regional and national competitions.'
+    ]
+  },
+  {
+    role: 'Senior Commissioner',
+    organization: 'Ateneo Senior High School Commission on Elections',
+    period: 'January 2024 - May 2024',
+    location: 'Philippines',
+    description: [
+      'Automated the vote validation process prior to counting, improving accuracy and reducing manual errors.',
+      'Streamlined election procedures through simple scripts and digital tools, ensuring efficient and transparent results.'
+    ]
+  }
+]
+
+export const certifications: Certification[] = [
+  {
+    title: 'Quantum Computing and Blockchain Lecture Series',
+    issuer: 'Quantum Computing Society of the Philippines',
+    date: '2025',
+    description: 'Completed the Quantum Computing and Blockchain Lecture Series 2025.',
+    links: [
+      { label: 'Certificate', url: 'https://verified.sertifier.com/en/verify/11904129918788/' }
+    ]
+  }
+]
+
+export const talks: Talk[] = [
+  {
+    title: 'Pandora\'s Box',
+    event: 'Bootcamp 12.0',
+    date: '2025',
+    description: 'Given a speech about the experiences in UPD BSCS, and how it differ from other universities.'
+  },
+  {
+    title: 'Graph Theory in Research',
+    event: 'NOVUS Competition',
+    date: '2024',
+    description: 'Given a speech about how programming helps student researchers analyze data gathered, leading to more accurate results'
+  },
+  {
+    title: 'Google Apps Script for Google Sheets',
+    event: 'Formula S',
+    date: '2024',
+    description: 'Gave a speech about how Google App Script and Javascript can extend the capabilities of Google Sheets, improving the experience while using the platform'
   }
 ]
 
 export const activities: Activity[] = [
   {
-    title: 'Competitive Programming Team Member',
-    organization: 'UP Programming Guild',
+    title: 'ICPC Manila Regional Round Participant',
+    organization: 'International Collegiate Programming Contest | Ateneo de Manila University',
+    period: 'December 2025',
     description: 'Competed in ICPC Manila Regional Round in 2025 in Ateneo de Manila University',
     links: [
       { label: 'Facebook', url: 'https://www.facebook.com/share/18TKgmio67' }
@@ -148,10 +265,17 @@ export const activities: Activity[] = [
   },
   {
     title: 'NOI.PH Finalist',
-    organization: 'NOI.PH',
+    organization: 'NOI.PH | Ateneo de Manila University',
+    period: '2024',
     description: 'One of the top 30 participants in NOI.PH 2024 National Eliminations',
     links: [
       { label: 'Website', url: 'https://noi.ph/2024-national-eliminations/' }
     ]
+  },
+  {
+    title: 'Automation Competition – Participant',
+    organization: 'Old St. Labs',
+    period: '2025',
+    description: 'Designed and implemented an automation solution, applying concepts in prompt engineering to solve business inefficiencies in their standard operating procedure',
   }
 ]
