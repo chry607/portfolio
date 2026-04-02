@@ -139,16 +139,19 @@ export const talks: Talk[] = [
 
 export const activities: Activity[] = [
   {
-    title: 'Competitive Programming Team',
-    organization: 'University ICPC Chapter',
-    description: 'Competed in regional rounds, mentored juniors, and built a weekly problem-solving practice set.'
+    title: 'Competitive Programming Team Member',
+    organization: 'UP Programming Guild',
+    description: 'Competed in ICPC Manila Regional Round in 2025 in Ateneo de Manila University',
+    links: [
+      { label: 'Facebook', url: 'https://www.facebook.com/share/18TKgmio67' }
+    ]
   },
   {
-    title: 'Data Science Society',
-    organization: 'Campus Organization',
-    description: 'Led mini-workshops on model evaluation and collaborated on social-impact analytics projects.',
+    title: 'NOI.PH Finalist',
+    organization: 'NOI.PH',
+    description: 'One of the top 30 participants in NOI.PH 2024 National Eliminations',
     links: [
-      { label: 'Website', url: 'https://www.facebook.com' }
+      { label: 'Website', url: 'https://noi.ph/2024-national-eliminations/' }
     ]
   }
 ]

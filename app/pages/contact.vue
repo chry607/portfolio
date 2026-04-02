@@ -9,8 +9,8 @@ import { profile } from '~/data/portfolio'
       description="Open to SWE and Data/AI internship opportunities."
     />
 
-    <section class="grid lg:grid-cols-3 gap-6 mt-8">
-      <UCard class="sai-panel lg:col-span-2">
+    <section class="max-w-5xl mx-auto grid gap-6 mt-8 lg:grid-cols-2 items-stretch">
+      <UCard class="sai-panel h-full">
         <template #header>
           <div class="space-y-1">
             <h2 class="text-lg font-semibold">
@@ -22,11 +22,12 @@ import { profile } from '~/data/portfolio'
           </div>
         </template>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="grid gap-3">
           <UButton
             :to="`mailto:${profile.email}`"
             color="primary"
             icon="i-lucide-mail"
+            block
           >
             {{ profile.email }}
           </UButton>
@@ -36,6 +37,7 @@ import { profile } from '~/data/portfolio'
             color="neutral"
             variant="outline"
             icon="i-simple-icons-linkedin"
+            block
           >
             LinkedIn
           </UButton>
@@ -45,13 +47,14 @@ import { profile } from '~/data/portfolio'
             color="neutral"
             variant="outline"
             icon="i-simple-icons-github"
+            block
           >
             GitHub
           </UButton>
         </div>
       </UCard>
 
-      <UCard class="sai-panel">
+      <UCard class="sai-panel h-full">
         <template #header>
           <div class="space-y-1">
             <h2 class="text-lg font-semibold">

@@ -79,7 +79,7 @@ import { activities, talks } from '~/data/portfolio'
 
     <section class="mt-10">
       <h2 class="section-title">
-        Competitive Programming & Extracurriculars
+        Advance Interests
       </h2>
       <div class="grid md:grid-cols-2 gap-5 mt-4">
         <UCard

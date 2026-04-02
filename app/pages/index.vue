@@ -7,6 +7,42 @@ const featuredProjects = projects.slice(0, 3)
 function goToProject(slug: string) {
   return navigateTo(`/projects/${slug}`)
 }
+
+const typingPhrases = ['Reuter Jan Camacho', 'Full-Stack Software Engineer', 'Data Scientist | AI Engineer']
+const typedText = ref('')
+const typingIndex = ref(0)
+const charIndex = ref(0)
+const isDeleting = ref(false)
+
+function tickTyping() {
+  const phrase = typingPhrases[typingIndex.value] || ''
+
+  if (!isDeleting.value) {
+    charIndex.value = Math.min(charIndex.value + 1, phrase.length)
+    typedText.value = phrase.slice(0, charIndex.value)
+    if (charIndex.value >= phrase.length) {
+      isDeleting.value = true
+      setTimeout(tickTyping, 900)
+      return
+    }
+    setTimeout(tickTyping, 70)
+    return
+  }
+
+  charIndex.value = Math.max(charIndex.value - 1, 0)
+  typedText.value = phrase.slice(0, charIndex.value)
+  if (charIndex.value <= 0) {
+    isDeleting.value = false
+    typingIndex.value = (typingIndex.value + 1) % typingPhrases.length
+    setTimeout(tickTyping, 250)
+    return
+  }
+  setTimeout(tickTyping, 40)
+}
+
+onMounted(() => {
+  tickTyping()
+})
 </script>
 
 <template>
@@ -22,16 +58,24 @@ function goToProject(slug: string) {
               variant="subtle"
               class="mb-4"
             >
-              Dr. Stone Theme • Sai Nanami Energy
+              Actively Looking for Opportunities
             </UBadge>
             <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
-              Computer Science Major engineering
-              <span class="text-primary">SWE + Data/AI</span>
-              solutions with precision.
+              <span class="text-muted text-base sm:text-lg font-medium tracking-wide block mb-3">
+                Personal Portfolio
+              </span>
+              <span class="inline-flex items-center gap-2">
+                <span class="text-primary">
+                  {{ typedText }}
+                </span>
+                <span
+                  class="typing-caret"
+                  aria-hidden="true"
+                />
+              </span>
             </h1>
             <p class="mt-5 text-lg text-muted leading-relaxed">
-              I build reliable full-stack systems, train and deploy ML models, and turn messy datasets into decisions.
-              This portfolio is styled as a tactical notebook inspired by Sai Nanami in Dr. Stone.
+              I’m a Computer Science student at UP Diliman with a passion for Data Science and Software Engineering, complemented by leadership experience in student technology organizations.
             </p>
 
             <div class="mt-7 flex flex-wrap gap-3">
@@ -70,7 +114,7 @@ function goToProject(slug: string) {
     <UContainer class="pb-10">
       <section>
         <h2 class="section-title">
-          Skill Matrix
+          Skills
         </h2>
         <div class="skills-marquee mt-4">
           <div class="skills-marquee-track">
@@ -139,7 +183,7 @@ function goToProject(slug: string) {
               class="relative z-20"
               @click.stop
             >
-              Case Study
+              View Project
             </UButton>
             <div class="flex flex-wrap gap-2">
               <UButton
@@ -214,3 +258,33 @@ function goToProject(slug: string) {
     </UContainer>
   </div>
 </template>
+
+<style scoped>
+.typing-caret {
+  width: 10px;
+  height: 1.2em;
+  display: inline-block;
+  border-radius: 999px;
+  background: rgb(122 67 255 / 0.95);
+  box-shadow: 0 0 18px rgb(122 67 255 / 0.45);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-caret {
+    animation: none;
+  }
+}
+</style>

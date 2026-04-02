@@ -33,6 +33,11 @@ body {
   color: #ece9ff;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .sai-grid {
   background-image:
     linear-gradient(to right, rgb(120 120 160 / 0.08) 1px, transparent 1px),
