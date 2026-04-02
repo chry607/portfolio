@@ -13,6 +13,7 @@ const typedText = ref('')
 const typingIndex = ref(0)
 const charIndex = ref(0)
 const isDeleting = ref(false)
+const openToOpportunities = ref(true)
 
 function tickTyping() {
   const phrase = typingPhrases[typingIndex.value] || ''
@@ -58,7 +59,7 @@ onMounted(() => {
               variant="subtle"
               class="mb-4"
             >
-              Actively Looking for Opportunities
+              {{ openToOpportunities ? 'Actively Looking for Opportunities' : '' }}
             </UBadge>
             <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
               <span class="text-muted text-base sm:text-lg font-medium tracking-wide block mb-3">

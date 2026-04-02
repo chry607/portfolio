@@ -85,11 +85,6 @@ const stats = [
       </div>
 
       <div class="max-w-3xl space-y-5">
-        <div class="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/60 px-3 py-1 text-xs text-muted backdrop-blur">
-          <span class="h-1.5 w-1.5 rounded-full bg-primary/80" />
-          Building production-ready SWE + practical ML
-        </div>
-
         <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
           About
         </h1>

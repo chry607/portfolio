@@ -136,49 +136,110 @@ export const projectCategories: ProjectCategory[] = [
 
 export const projects: Project[] = [
   {
-    slug: 'petrification-risk-classifier',
-    title: 'Petrification Risk Classifier',
-    subtitle: 'Explainable vision model pipeline',
-    description: 'Built an end-to-end model workflow with experiment tracking, interpretable outputs, and reproducible inference artifacts.',
-    impact: '92.4% validation F1',
-    category: 'ai-ds',
-    stack: ['PyTorch', 'ML Ops', 'Computer Vision'],
-    githubUrl: 'https://github.com/yourusername/petrification-risk-classifier',
-    highlights: [
-      'Implemented data versioning and augmentation strategy to reduce overfitting.',
-      'Generated saliency and grad-CAM views for model interpretability.',
-      'Packaged model with API endpoint and benchmarked latency for edge deployment.'
-    ]
-  },
-  {
-    slug: 'kingdom-logistics-os',
-    title: 'Kingdom Logistics OS',
-    subtitle: 'Operational dashboard for multi-team workflows',
-    description: 'Designed and shipped a full-stack platform for inventory routing, live state updates, and role-based access for multiple operators.',
-    impact: '38% faster order cycle',
+    slug: 'athnest-platform',
+    title: 'AthNest',
+    subtitle: 'Automated programming classroom platform',
+    description: 'Engineered a full-stack Codeforces-style system for automated grading, real-time feedback, and competitive programming workflows.',
+    impact: '100% reduction in manual grading time',
     category: 'swe',
-    stack: ['Nuxt', 'Node.js', 'PostgreSQL'],
-    githubUrl: 'https://github.com/yourusername/kingdom-logistics-os',
-    liveUrl: 'https://logistics-demo.example.com',
+    stack: ['Next.js', 'Django', 'PostgreSQL', 'Docker', 'Redis', 'Celery'],
+    // githubUrl: 'https://github.com/yourusername/athnest',
     highlights: [
-      'Built event-driven updates to maintain near realtime order visibility.',
-      'Introduced RBAC policies and audited critical data actions.',
-      'Created analytics views for bottleneck detection in logistics flow.'
+      'Built scalable backend with Django, Redis, and Celery supporting 1000+ concurrent submissions.',
+      'Designed containerized infrastructure with horizontal scaling on DigitalOcean.',
+      'Developed interactive frontend with leaderboards, analytics, and real-time feedback.',
+      'Integrated CI/CD pipelines for automated testing and deployment.'
     ]
   },
   {
-    slug: 'sai-strategy-engine',
-    title: 'Sai Strategy Engine',
-    subtitle: 'Graph-based planning recommendation service',
-    description: 'Created a decision engine using graph relationships and historical sprint data to suggest next-step execution plans.',
-    impact: '24% better planning accuracy',
-    category: 'research',
-    stack: ['Graph Algorithms', 'FastAPI', 'Data Engineering'],
-    githubUrl: 'https://github.com/yourusername/sai-strategy-engine',
+    slug: 'gpu-backtesting-engine',
+    title: 'GPU-Accelerated Backtesting Engine',
+    subtitle: 'High-performance commodity trading simulation',
+    description: 'Built a CUDA-powered backtesting engine for commodity trading strategies, enabling large-scale parameter sweeps and fast financial metric computation.',
+    impact: 'Massive speedup vs CPU baselines',
+    category: 'ai-ds',
+    stack: ['C++', 'CUDA', 'Parallel Computing'],
+    // githubUrl: 'https://github.com/yourusername/gpu-backtesting-engine',
     highlights: [
-      'Modeled dependency graphs for tasks, teams, and blockers.',
-      'Built recommendation scoring with interpretable confidence values.',
-      'Deployed ETL jobs to refresh strategy inputs on a schedule.'
+      'Parallelized thousands of strategy configurations using GPU kernels.',
+      'Optimized memory access patterns and implemented parallel reductions.',
+      'Computed key financial metrics including PnL, Sharpe ratio, and max drawdown efficiently.'
+    ]
+  },
+  {
+    slug: 'constellai-rag',
+    title: 'ConstellAI',
+    subtitle: 'Local research paper QA system (RAG)',
+    description: 'Developed an end-to-end retrieval-augmented generation pipeline for querying local research papers with high factual accuracy.',
+    impact: 'Accurate, hallucination-resistant QA',
+    category: 'ai-ds',
+    stack: ['Python', 'ChromaDB', 'sentence-transformers', 'Ollama', 'UMAP'],
+    // githubUrl: 'https://github.com/yourusername/constellai',
+    highlights: [
+      'Built PDF ingestion pipeline with PyMuPDF and custom font-shift decoding.',
+      'Generated semantic embeddings using BAAI/bge-small-en-v1.5 and implemented top-k retrieval.',
+      'Ran Mistral locally via Ollama with strict source-grounded prompting.',
+      'Visualized embedding space with UMAP to create a 2D knowledge graph of documents.'
+    ]
+  },
+  {
+    slug: 'up-acm-financial-dashboard',
+    title: 'UP ACM Financial Dashboard',
+    subtitle: 'Budget tracking and analytics platform',
+    description: 'Created a financial dashboard for UP ACM to monitor multi-project budgets and expenditures with data-driven insights.',
+    impact: 'Enabled org-wide financial visibility',
+    category: 'swe',
+    stack: ['SQL', 'React', 'shadcn/ui'],
+    // githubUrl: 'https://github.com/yourusername/up-acm-dashboard',
+    highlights: [
+      'Designed SQL-backed aggregation for historical vs current spending analysis.',
+      'Built interactive comparison views for project budgets.',
+      'Enabled data-driven decision making for council operations.'
+    ]
+  },
+  {
+    slug: 'dryve-safe-flood-prediction',
+    title: 'Dry-ve Safe Flood Prediction System',
+    subtitle: 'Geospatial AI prediction platform',
+    description: 'Developed backend services for an AI-powered flood prediction system using geospatial inputs and ML inference.',
+    impact: 'Reliable geospatial prediction APIs',
+    category: 'ai-ds',
+    stack: ['Django', 'Django REST Framework'],
+    // githubUrl: 'https://github.com/yourusername/dryve-safe',
+    highlights: [
+      'Implemented RESTful APIs for ML microservice integration.',
+      'Handled validation, error management, and request orchestration.',
+      'Designed scalable backend for geospatial prediction workflows.'
+    ]
+  },
+  {
+    slug: 'class-officer-sorting-system',
+    title: 'Class Officer Sorting System',
+    subtitle: 'Election data automation tool',
+    description: 'Automated classification of election candidates from messy Google Sheets data for Ateneo SHS ComElec.',
+    impact: 'Significantly reduced manual sorting effort',
+    category: 'swe',
+    stack: ['Google Apps Script', 'JavaScript'],
+    // githubUrl: 'https://github.com/yourusername/class-officer-system',
+    highlights: [
+      'Parsed and cleaned raw spreadsheet data programmatically.',
+      'Automated classification by section and position.',
+      'Improved efficiency and accuracy of election processing.'
+    ]
+  },
+  {
+    slug: 'project-pip',
+    title: 'Project PIP',
+    subtitle: 'Campus plant information system',
+    description: 'Built a dynamic website showcasing plant species across the Ateneo campus with a wiki-style interface.',
+    impact: 'Interactive campus knowledge platform',
+    category: 'swe',
+    stack: ['JavaScript', 'Firebase', 'GCP'],
+    // githubUrl: 'https://github.com/yourusername/project-pip',
+    highlights: [
+      'Designed database-backed content system for plant data.',
+      'Developed dynamic frontend with vanilla JavaScript.',
+      'Deployed using Firebase and Google Cloud Platform.'
     ]
   }
 ]
