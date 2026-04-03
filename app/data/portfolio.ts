@@ -251,7 +251,7 @@ export const projects: Project[] = [
     category: 'swe',
     stack: ['Nuxt.js', 'Tailwind CSS'],
     githubUrl: 'https://github.com/chry607/portfolio',
-    liveUrl: 'https://portfolio-by5o80v3n-reuters-projects.vercel.app/',
+    liveUrl: 'https://portfolio-reuters-projects.vercel.app/',
     highlights: [
       'Built with Nuxt.js for optimized performance and SEO.',
       'Designed responsive UI using Tailwind CSS with clean component structure.',
